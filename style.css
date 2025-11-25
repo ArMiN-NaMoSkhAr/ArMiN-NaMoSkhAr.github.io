@@ -198,12 +198,20 @@ body {
 =========================== */
 
 .footer {
+    width: 100%;
     text-align: center;
-    padding: 20px;
-    margin-top: 30px;
-    background: rgba(0, 0, 0, 0.6);
-    border-top: 2px solid #ff002e;
+    padding: 25px;
+    margin-top: 40px;
+
+    background: rgba(0, 0, 0, 0.75);   /* کادر مشکی پشت متن */
+    border-top: 2px solid #ff002e;     /* خط نئون بالا */
+    border-bottom: 2px solid #ff002e;  /* خط نئون پایین */
+
+    box-shadow: 0 0 25px #ff002e88;    /* نئون اطراف */
+    backdrop-filter: blur(6px);
+
     color: #ff002e;
-    text-shadow: 0 0 15px #ff002e;
+    text-shadow: 0 0 12px #ff002e;
+    font-size: 1.3em;
 }
 
