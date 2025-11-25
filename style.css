@@ -214,4 +214,95 @@ body {
     text-shadow: 0 0 12px #ff002e;
     font-size: 1.3em;
 }
+/* ===========================
+   📱 MOBILE RESPONSIVE
+=========================== */
+
+@media (max-width: 600px) {
+
+    .title-glitch {
+        font-size: 2.4em;  /* کوچیک‌تر بشه ولی همچنان خفن */
+        letter-spacing: 4px;
+    }
+
+    .section-box {
+        width: 92%;
+        padding: 18px;
+    }
+
+    .section-title {
+        font-size: 2em;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-item {
+        height: 240px;
+    }
+
+    .contact-box {
+        font-size: 0.95em;
+    }
+
+    .footer {
+        font-size: 1.1em;
+        padding: 18px;
+    }
+}
+/* ===========================
+   📲 TABLET RESPONSIVE
+=========================== */
+
+@media (min-width: 600px) and (max-width: 900px) {
+
+    .title-glitch {
+        font-size: 3.2em;
+    }
+
+    .section-box {
+        width: 90%;
+        padding: 22px;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    }
+
+    .gallery-item {
+        height: 250px;
+    }
+
+    .footer {
+        font-size: 1.25em;
+        padding: 20px;
+    }
+}
+/* ===========================
+   💻 SMALL LAPTOP RESPONSIVE
+=========================== */
+
+@media (min-width: 900px) and (max-width: 1200px) {
+
+    .title-glitch {
+        font-size: 3.7em;
+    }
+
+    .section-box {
+        width: 88%;
+    }
+
+    .gallery-item {
+        height: 260px;
+    }
+}
 
