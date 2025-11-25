@@ -336,4 +336,43 @@ body {
     box-shadow: 0 0 25px #ff0037;
     transform: scale(1.1);
 }
+/* ===========================
+   🔥 TOP LEFT MENU
+=========================== */
+
+.top-menu {
+    position: absolute;
+    top: 15px;
+    left: 25px;
+    display: flex;
+    gap: 20px;
+    z-index: 9999;
+}
+
+.top-menu a {
+    text-decoration: none;
+    color: #ff002e;
+    padding: 7px 16px;
+    border: 2px solid #ff002e;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.55);
+    font-size: 1.1em;
+    font-weight: 600;
+    box-shadow: 0 0 12px #ff002e55;
+    transition: .3s;
+}
+
+.top-menu a:hover {
+    background: #ff002e;
+    color: #000;
+    box-shadow: 0 0 25px #ff0037;
+    transform: scale(1.12);
+}
+
+/* خط جداکننده هدر */
+.cyber-header {
+    border-bottom: 2px solid rgba(255, 0, 46, 0.35);
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+}
 
