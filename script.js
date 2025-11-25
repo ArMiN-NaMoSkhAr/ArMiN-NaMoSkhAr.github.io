@@ -9,3 +9,8 @@ window.addEventListener("scroll", () => {
         }
     });
 });
+// Remove splash screen after 5 seconds
+setTimeout(() => {
+    const splash = document.getElementById("splash");
+    if (splash) splash.remove();
+}, 5000);
