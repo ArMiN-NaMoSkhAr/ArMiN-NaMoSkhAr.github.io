@@ -20,7 +20,12 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 99999;
-    animation: fadeOut 5s forwards ease-in-out;
+}
+
+#splash.hide {
+    opacity: 0;
+    transition: .7s ease;
+    pointer-events: none;
 }
 
 .splash-text {
@@ -40,32 +45,59 @@ body {
     margin-top: 10px;
 }
 
-@keyframes fadeOut {
-    0% { opacity: 1; }
-    80% { opacity: 1; }
-    100% { opacity: 0; visibility: hidden; }
-}
-
 @keyframes glow {
     0% { text-shadow: 0 0 10px #ff002e; }
     100% { text-shadow: 0 0 35px #ff0037, 0 0 60px #ff002e; }
 }
 
 /* ===========================
-   🔥 CYBER HEADER FIXED + CENTERED
+   🔥 CYBER HEADER FIXED
 =========================== */
-
 .cyber-header {
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;  
-    justify-content: center;
+    padding-top: 70px;
+    padding-bottom: 20px;
     text-align: center;
-    padding-top: 60px;
     position: relative;
+    border-bottom: 2px solid rgba(255, 0, 46, 0.35);
+    margin-bottom: 30px;
 }
 
+/* ===========================
+   🔥 TOP LEFT MENU
+=========================== */
+.cyber-menu {
+    position: absolute;
+    top: 20px;
+    left: 25px;
+    display: flex;
+    gap: 20px;
+    z-index: 20000;
+}
+
+.cyber-menu a {
+    text-decoration: none;
+    color: #ff002e;
+    padding: 7px 16px;
+    border: 2px solid #ff002e;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.55);
+    font-size: 1.15em;
+    font-weight: 600;
+    box-shadow: 0 0 12px #ff002e55;
+    transition: .25s;
+}
+
+.cyber-menu a:hover {
+    background: #ff002e;
+    color: #000;
+    transform: scale(1.12);
+    box-shadow: 0 0 25px #ff0037;
+}
+
+/* ===========================
+   🔥 GHOST FACE TITLE
+=========================== */
 .title-glitch {
     font-size: 4.2em;
     color: #ff002e;
@@ -79,7 +111,6 @@ body {
     display: inline-block;
 }
 
-/* سایه تکنولوژیک پشت متن - کاملاً وسط‌شده */
 .title-glitch::after {
     content: "GHOST FACE";
     position: absolute;
@@ -111,7 +142,6 @@ body {
 /* ===========================
    SECTIONS
 =========================== */
-
 .section-box {
     width: 85%;
     margin: 50px auto;
@@ -133,7 +163,6 @@ body {
 /* ===========================
    SKILLS
 =========================== */
-
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
@@ -156,9 +185,8 @@ body {
 }
 
 /* ===========================
-   GALLERY + FIRE EDGE EFFECT
+   GALLERY
 =========================== */
-
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -171,20 +199,17 @@ body {
     border: 3px solid #ff002e;
     box-shadow: 0 0 25px #ff002eaa;
     object-fit: cover;
-    transition: 0.3s ease-in-out;
-    position: relative;
+    transition: 0.3s;
 }
 
-/* 🔥 افکت آتش/سایبری دور قاب */
 .gallery-item:hover {
+    filter: brightness(1.25);
     box-shadow: 0 0 35px #ff0037, 0 0 70px #ff0022;
-    filter: brightness(1.2);
 }
 
 /* ===========================
    CONTACT BOX
 =========================== */
-
 .contact-box {
     background: rgba(20, 0, 0, 0.55);
     border: 2px solid #ff002e;
@@ -196,183 +221,113 @@ body {
 /* ===========================
    FOOTER
 =========================== */
-
 .footer {
     width: 100%;
     text-align: center;
     padding: 25px;
     margin-top: 40px;
-
-    background: rgba(0, 0, 0, 0.75);   /* کادر مشکی پشت متن */
-    border-top: 2px solid #ff002e;     /* خط نئون بالا */
-    border-bottom: 2px solid #ff002e;  /* خط نئون پایین */
-
-    box-shadow: 0 0 25px #ff002e88;    /* نئون اطراف */
+    background: rgba(0, 0, 0, 0.75);
+    border-top: 2px solid #ff002e;
+    border-bottom: 2px solid #ff002e;
+    box-shadow: 0 0 25px #ff002e88;
     backdrop-filter: blur(6px);
-
     color: #ff002e;
     text-shadow: 0 0 12px #ff002e;
     font-size: 1.3em;
 }
-/* ===========================
-   📱 MOBILE RESPONSIVE
-=========================== */
 
+/* ===========================
+   RESPONSIVE (MOBILE)
+=========================== */
 @media (max-width: 600px) {
 
     .title-glitch {
-        font-size: 2.4em;  /* کوچیک‌تر بشه ولی همچنان خفن */
-        letter-spacing: 4px;
+        font-size: 2.6em;
+        letter-spacing: 3px;
+    }
+
+    .cyber-menu {
+        top: 15px;
+        left: 15px;
+        gap: 12px;
+    }
+
+    .cyber-menu a {
+        padding: 5px 12px;
+        font-size: 0.9em;
     }
 
     .section-box {
         width: 92%;
-        padding: 18px;
-    }
-
-    .section-title {
-        font-size: 2em;
-    }
-
-    .skills-grid {
-        grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
     }
 
     .gallery-grid {
         grid-template-columns: 1fr;
     }
-
-    .gallery-item {
-        height: 240px;
-    }
-
-    .contact-box {
-        font-size: 0.95em;
-    }
-
-    .footer {
-        font-size: 1.1em;
-        padding: 18px;
-    }
 }
 /* ===========================
-   📲 TABLET RESPONSIVE
+   RESPONSIVE — TABLET (768px)
 =========================== */
-
-@media (min-width: 600px) and (max-width: 900px) {
+@media (max-width: 768px) {
 
     .title-glitch {
         font-size: 3.2em;
     }
 
-    .section-box {
-        width: 90%;
-        padding: 22px;
+    .cyber-menu {
+        top: 18px;
+        left: 18px;
+        gap: 15px;
     }
 
-    .skills-grid {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    .cyber-menu a {
+        font-size: 1em;
+        padding: 6px 14px;
+    }
+
+    .section-box {
+        width: 90%;
+        padding: 20px;
     }
 
     .gallery-grid {
-        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .gallery-item {
-        height: 250px;
-    }
-
-    .footer {
-        font-size: 1.25em;
-        padding: 20px;
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
-/* ===========================
-   💻 SMALL LAPTOP RESPONSIVE
-=========================== */
 
-@media (min-width: 900px) and (max-width: 1200px) {
+/* ===========================
+   RESPONSIVE — SMALL LAPTOP (1024px)
+=========================== */
+@media (max-width: 1024px) {
 
     .title-glitch {
-        font-size: 3.7em;
+        font-size: 3.6em;
+    }
+
+    .cyber-menu {
+        top: 20px;
+        left: 22px;
+        gap: 18px;
+    }
+
+    .cyber-menu a {
+        font-size: 1.05em;
+        padding: 7px 16px;
     }
 
     .section-box {
         width: 88%;
     }
 
-    .gallery-item {
-        height: 260px;
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
-/* ===========================
-   🔥 CYBER MENU
-=========================== */
-
-.cyber-menu {
-    display: flex;
-    gap: 25px;
-    margin-top: 15px;
-    align-self: flex-start;     /* منو رو می‌بره سمت چپ */
-    margin-left: 40px;          /* فاصله از لبه */
-}
-
-.cyber-menu a {
-    text-decoration: none;
-    color: #ff002e;
-    font-size: 1.25em;
-    font-weight: 600;
-    padding: 8px 18px;
-    border: 2px solid #ff002e;
-    border-radius: 8px;
-    background: rgba(0, 0, 0, 0.45);
-    box-shadow: 0 0 10px #ff002e77;
-    transition: 0.3s ease-in-out;
-}
-
-.cyber-menu a:hover {
-    background: #ff002e;
-    color: #000;
-    box-shadow: 0 0 25px #ff0037;
-    transform: scale(1.1);
-}
-/* ===========================
-   🔥 TOP LEFT MENU
-=========================== */
-
-.top-menu {
-    position: absolute;
-    top: 15px;
-    left: 25px;
-    display: flex;
-    gap: 20px;
-    z-index: 9999;
-}
-
-.top-menu a {
-    text-decoration: none;
-    color: #ff002e;
-    padding: 7px 16px;
-    border: 2px solid #ff002e;
-    border-radius: 8px;
-    background: rgba(0, 0, 0, 0.55);
-    font-size: 1.1em;
-    font-weight: 600;
-    box-shadow: 0 0 12px #ff002e55;
-    transition: .3s;
-}
-
-.top-menu a:hover {
-    background: #ff002e;
-    color: #000;
-    box-shadow: 0 0 25px #ff0037;
-    transform: scale(1.12);
-}
-
-/* خط جداکننده هدر */
-.cyber-header {
-    border-bottom: 2px solid rgba(255, 0, 46, 0.35);
-    padding-bottom: 15px;
-    margin-bottom: 25px;
-}
-
