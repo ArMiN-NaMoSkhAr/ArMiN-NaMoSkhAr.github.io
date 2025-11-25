@@ -62,37 +62,48 @@ body {
     border-bottom: 2px solid rgba(255, 0, 46, 0.35);
     margin-bottom: 30px;
 }
-
 /* ===========================
-   🔥 TOP LEFT MENU
+   🔥 TOP MENU (LEFT)
 =========================== */
-.cyber-menu {
+
+.top-menu {
     position: absolute;
-    top: 20px;
+    top: 18px;
     left: 25px;
     display: flex;
-    gap: 20px;
-    z-index: 20000;
+    gap: 18px;
+    z-index: 9999;
 }
 
-.cyber-menu a {
+.top-menu a {
     text-decoration: none;
     color: #ff002e;
-    padding: 7px 16px;
+    padding: 8px 18px;
     border: 2px solid #ff002e;
-    border-radius: 8px;
+    border-radius: 10px;
     background: rgba(0, 0, 0, 0.55);
     font-size: 1.15em;
     font-weight: 600;
     box-shadow: 0 0 12px #ff002e55;
-    transition: .25s;
+    transition: .3s ease-in-out;
 }
 
-.cyber-menu a:hover {
+.top-menu a:hover {
     background: #ff002e;
     color: #000;
     transform: scale(1.12);
     box-shadow: 0 0 25px #ff0037;
+}
+
+
+/* ===========================
+   HEADER SEPARATOR LINE
+=========================== */
+
+.cyber-header {
+    border-bottom: 2px solid rgba(255, 0, 46, 0.35);
+    padding-bottom: 25px;
+    margin-bottom: 35px;
 }
 
 /* ===========================
@@ -235,110 +246,62 @@ body {
     text-shadow: 0 0 12px #ff002e;
     font-size: 1.3em;
 }
-
 /* ===========================
-   RESPONSIVE (MOBILE)
+   📱 MOBILE RESPONSIVE
 =========================== */
 @media (max-width: 600px) {
 
-    .title-glitch {
-        font-size: 2.6em;
-        letter-spacing: 3px;
+    .top-menu {
+        top: 12px;
+        left: 10px;
+        gap: 10px;
     }
 
-    .cyber-menu {
+    .top-menu a {
+        padding: 6px 12px;
+        font-size: 0.88em;
+        border-width: 1.5px;
+    }
+
+    .title-glitch {
+        font-size: 2.2em;
+    }
+}
+
+
+/* ===========================
+   📲 TABLET RESPONSIVE
+=========================== */
+@media (min-width: 600px) and (max-width: 900px) {
+
+    .top-menu {
         top: 15px;
-        left: 15px;
-        gap: 12px;
-    }
-
-    .cyber-menu a {
-        padding: 5px 12px;
-        font-size: 0.9em;
-    }
-
-    .section-box {
-        width: 92%;
-    }
-
-    .gallery-grid {
-        grid-template-columns: 1fr;
-    }
-}
-/* ===========================
-   RESPONSIVE — TABLET (768px)
-=========================== */
-@media (max-width: 768px) {
-
-    .title-glitch {
-        font-size: 3.2em;
-    }
-
-    .cyber-menu {
-        top: 18px;
         left: 18px;
-        gap: 15px;
+        gap: 16px;
     }
 
-    .cyber-menu a {
+    .top-menu a {
+        padding: 7px 15px;
         font-size: 1em;
-        padding: 6px 14px;
     }
-
-    .section-box {
-        width: 90%;
-        padding: 20px;
-    }
-
-    .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .skills-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/* ===========================
-   RESPONSIVE — SMALL LAPTOP (1024px)
-=========================== */
-@media (max-width: 1024px) {
 
     .title-glitch {
-        font-size: 3.6em;
-    }
-
-    .cyber-menu {
-        top: 20px;
-        left: 22px;
-        gap: 18px;
-    }
-
-    .cyber-menu a {
-        font-size: 1.05em;
-        padding: 7px 16px;
-    }
-
-    .section-box {
-        width: 88%;
-    }
-
-    .gallery-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .skills-grid {
-        grid-template-columns: repeat(3, 1fr);
+        font-size: 3em;
     }
 }
-.about-text {
-    background: rgba(0, 0, 0, 0.55);
-    padding: 22px;
-    border-radius: 15px;
-    border: 1px solid rgba(255,0,0,0.3);
-    box-shadow: 0 0 20px rgba(255, 0, 0, 0.25);
-    backdrop-filter: blur(3px);
-    line-height: 1.8;
-    font-size: 1.15em;
-    color: #ddd;
+
+
+/* ===========================
+   💻 SMALL LAPTOP RESPONSIVE
+=========================== */
+@media (min-width: 900px) and (max-width: 1200px) {
+
+    .top-menu a {
+        padding: 8px 20px;
+        font-size: 1.1em;
+    }
+
+    .title-glitch {
+        font-size: 3.5em;
+    }
 }
