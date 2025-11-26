@@ -1,5 +1,5 @@
 /* ===========================
-   GLOBAL
+   GLOBAL STYLE
 =========================== */
 body {
     margin: 0;
@@ -10,144 +10,97 @@ body {
 }
 
 /* ===========================
-   🔥 SPLASH SCREEN
+   HEADER + GLITCH
 =========================== */
-#splash {
-    position: fixed;
-    inset: 0;
-    background: radial-gradient(circle, #1a0000, #000000);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 99999;
-}
 
-#splash.hide {
-    opacity: 0;
-    transition: .7s ease;
-    pointer-events: none;
-}
-
-.splash-text {
-    text-align: center;
-    color: #ff002e;
-    font-family: "Poppins", sans-serif;
-    animation: glow 2.5s infinite alternate;
-}
-
-.splash-text h2 {
-    font-size: 3em;
-    letter-spacing: 4px;
-}
-
-.splash-text p {
-    font-size: 1.6em;
-    margin-top: 10px;
-}
-
-@keyframes glow {
-    0% { text-shadow: 0 0 10px #ff002e; }
-    100% { text-shadow: 0 0 35px #ff0037, 0 0 60px #ff002e; }
-}
-
-/* ===========================
-   🔥 CYBER HEADER FIXED
-=========================== */
 .cyber-header {
-    width: 100%;
-    padding-top: 70px;
-    padding-bottom: 20px;
     text-align: center;
+    margin-top: 60px;
+    margin-bottom: 50px;
     position: relative;
-    border-bottom: 2px solid rgba(255, 0, 46, 0.35);
-    margin-bottom: 30px;
+    padding-bottom: 25px;
 }
+
+/* نور پس زمینه */
+.cyber-header::after {
+    content: "";
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 280px;
+    height: 45px;
+    background: radial-gradient(circle, rgba(255,255,255,0.35), transparent 70%);
+    filter: blur(18px);
+    z-index: -1;
+}
+
+.title-glitch {
+    font-size: 3.6em;
+    font-weight: 900;
+    color: #fff;
+    text-shadow: 0 0 20px #fff, 0 0 45px #fff;
+    position: relative;
+}
+
+.title-glitch::before,
+.title-glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0.25;
+}
+
+.title-glitch::before {
+    color: #ff0037;
+    transform: translate(3px, 3px);
+}
+
+.title-glitch::after {
+    color: #00eaff;
+    transform: translate(-3px, -3px);
+}
+
 /* ===========================
-   🔥 TOP MENU (LEFT)
+   TOP MENU (زیر هدر)
 =========================== */
 
 .top-menu {
     position: absolute;
-    top: 18px;
-    left: 25px;
+    top: 145px;
+    left: 50px;
     display: flex;
-    gap: 18px;
-    z-index: 9999;
+    gap: 20px;
+    padding: 10px;
 }
 
 .top-menu a {
+    color: white;
+    font-size: 1.1em;
     text-decoration: none;
-    color: #ff002e;
-    padding: 8px 18px;
-    border: 2px solid #ff002e;
-    border-radius: 10px;
-    background: rgba(0, 0, 0, 0.55);
-    font-size: 1.15em;
-    font-weight: 600;
-    box-shadow: 0 0 12px #ff002e55;
-    transition: .3s ease-in-out;
+    padding: 7px 14px;
+    border-radius: 6px;
+    background: rgba(255,255,255,0.07);
+    backdrop-filter: blur(3px);
+    transition: 0.25s;
 }
 
 .top-menu a:hover {
-    background: #ff002e;
-    color: #000;
-    transform: scale(1.12);
-    box-shadow: 0 0 25px #ff0037;
+    background: rgba(255,255,255,0.18);
+    transform: translateY(-2px);
 }
 
-
-/* ===========================
-   HEADER SEPARATOR LINE
-=========================== */
-
-.cyber-header {
-    border-bottom: 2px solid rgba(255, 0, 46, 0.35);
-    padding-bottom: 25px;
-    margin-bottom: 35px;
-}
-
-/* ===========================
-   🔥 GHOST FACE TITLE
-=========================== */
-.title-glitch {
-    font-size: 4.2em;
-    color: #ff002e;
-    letter-spacing: 7px;
-    text-shadow:
-        0 0 25px #ff002e,
-        0 0 55px #ff0037,
-        0 0 80px #ff0022;
-    animation: ghostPulse 3s infinite ease-in-out;
-    position: relative;
-    display: inline-block;
-}
-
-.title-glitch::after {
-    content: "GHOST FACE";
+/* خط محو زیر منو */
+.top-menu::after {
+    content: "";
     position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    color: transparent;
-    text-shadow:
-        0 0 15px #ff002e,
-        0 0 35px #ff0037,
-        0 0 60px #ff0022;
-    filter: blur(4px);
-    opacity: 0.6;
-    animation: techWave 4s infinite linear;
-}
-
-@keyframes ghostPulse {
-    0% { text-shadow: 0 0 25px #ff0037; }
-    50% { text-shadow: 0 0 70px #ff0037; }
-    100% { text-shadow: 0 0 25px #ff0037; }
-}
-
-@keyframes techWave {
-    0% { transform: translate(-50%, -50%) scale(1); }
-    50% { transform: translate(-50%, -50%) scale(1.05); }
-    100% { transform: translate(-50%, -50%) scale(1); }
+    bottom: -8px;
+    left: -5px;
+    width: 150%;
+    height: 4px;
+    background: radial-gradient(circle, rgba(255,255,255,0.45), transparent 70%);
+    filter: blur(6px);
 }
 
 /* ===========================
@@ -155,8 +108,8 @@ body {
 =========================== */
 .section-box {
     width: 85%;
-    margin: 50px auto;
-    background: rgba(0, 0, 0, 0.45);
+    margin: 60px auto;
+    background: rgba(0,0,0,0.45);
     border: 2px solid #ff002e;
     border-radius: 15px;
     padding: 25px;
@@ -166,7 +119,7 @@ body {
 
 .section-title {
     text-align: center;
-    font-size: 2.5em;
+    font-size: 2.4em;
     color: #ff002e;
     text-shadow: 0 0 25px #ff002e;
 }
@@ -181,18 +134,17 @@ body {
 }
 
 .skill-card {
-    background: rgba(30, 0, 0, 0.6);
+    background: rgba(30,0,0,0.6);
     border: 2px solid #ff002e;
     padding: 12px;
     text-align: center;
     border-radius: 10px;
-    box-shadow: 0 0 15px #ff002e66;
-    transition: .3s;
+    transition: .25s;
 }
 
 .skill-card:hover {
-    transform: scale(1.08);
-    box-shadow: 0 0 30px #ff002e;
+    transform: scale(1.1);
+    box-shadow: 0 0 25px #ff002e;
 }
 
 /* ===========================
@@ -208,21 +160,14 @@ body {
     width: 100%;
     border-radius: 15px;
     border: 3px solid #ff002e;
-    box-shadow: 0 0 25px #ff002eaa;
-    object-fit: cover;
-    transition: 0.3s;
-}
-
-.gallery-item:hover {
-    filter: brightness(1.25);
-    box-shadow: 0 0 35px #ff0037, 0 0 70px #ff0022;
+    box-shadow: 0 0 20px #ff002eaa;
 }
 
 /* ===========================
    CONTACT BOX
 =========================== */
 .contact-box {
-    background: rgba(20, 0, 0, 0.55);
+    background: rgba(20,0,0,0.55);
     border: 2px solid #ff002e;
     padding: 20px;
     border-radius: 10px;
@@ -233,135 +178,31 @@ body {
    FOOTER
 =========================== */
 .footer {
-    width: 100%;
     text-align: center;
     padding: 25px;
-    margin-top: 40px;
-    background: rgba(0, 0, 0, 0.75);
+    margin-top: 50px;
+    background: rgba(0,0,0,0.7);
     border-top: 2px solid #ff002e;
-    border-bottom: 2px solid #ff002e;
     box-shadow: 0 0 25px #ff002e88;
-    backdrop-filter: blur(6px);
     color: #ff002e;
-    text-shadow: 0 0 12px #ff002e;
-    font-size: 1.3em;
 }
+
 /* ===========================
-   📱 MOBILE RESPONSIVE
+   RESPONSIVE
 =========================== */
+
 @media (max-width: 600px) {
-
-    .top-menu {
-        top: 12px;
-        left: 10px;
-        gap: 10px;
-    }
-
-    .top-menu a {
-        padding: 6px 12px;
-        font-size: 0.88em;
-        border-width: 1.5px;
-    }
-
-    .title-glitch {
-        font-size: 2.2em;
-    }
+    .title-glitch { font-size: 2.2em; }
+    .top-menu { top: 120px; left: 15px; gap: 10px; }
+    .top-menu a { font-size: 0.9em; padding: 5px 10px; }
 }
 
-
-/* ===========================
-   📲 TABLET RESPONSIVE
-=========================== */
 @media (min-width: 600px) and (max-width: 900px) {
-
-    .top-menu {
-        top: 15px;
-        left: 18px;
-        gap: 16px;
-    }
-
-    .top-menu a {
-        padding: 7px 15px;
-        font-size: 1em;
-    }
-
-    .title-glitch {
-        font-size: 3em;
-    }
+    .title-glitch { font-size: 3em; }
+    .top-menu { top: 130px; left: 25px; }
 }
 
-
-/* ===========================
-   💻 SMALL LAPTOP RESPONSIVE
-=========================== */
 @media (min-width: 900px) and (max-width: 1200px) {
-
-    .top-menu a {
-        padding: 8px 20px;
-        font-size: 1.1em;
-    }
-
-    .title-glitch {
-        font-size: 3.5em;
-    }
-}
-/* ===========================
-   HEADER MENU (UNDER TITLE)
-=========================== */
-
-.header-menu {
-    margin-top: 10px;
-    display: flex;
-    gap: 20px;
-    justify-content: flex-start;
-    padding-left: 20px;
-}
-
-.header-menu a {
-    text-decoration: none;
-    color: #ff002e;
-    padding: 6px 14px;
-    border: 2px solid #ff002e;
-    border-radius: 10px;
-    background: rgba(0, 0, 0, 0.45);
-    font-size: 1.1em;
-    font-weight: 600;
-    transition: .3s;
-    box-shadow: 0 0 10px #ff002e55;
-}
-
-.header-menu a:hover {
-    background: #ff002e;
-    color: black;
-    box-shadow: 0 0 20px #ff0037;
-    transform: scale(1.1);
-}
-
-/* موبایل */
-@media (max-width: 600px) {
-    .header-menu {
-        margin-top: 8px;
-        gap: 12px;
-        padding-left: 10px;
-    }
-
-    .header-menu a {
-        padding: 5px 10px;
-        font-size: 0.85em;
-    }
-}
-.cyber-header {
-    text-align: left;
-    padding: 40px 20px;
-}
-
-.top-menu {
-    margin-top: 10px;
-}
-
-.top-menu a {
-    color: white;
-    margin-right: 20px;
-    text-decoration: none;
-    font-size: 1.2em;
+    .title-glitch { font-size: 3.3em; }
+    .top-menu { top: 140px; left: 40px; }
 }
