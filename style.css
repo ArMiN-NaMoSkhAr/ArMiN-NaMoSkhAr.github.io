@@ -38,29 +38,36 @@ body {
 .title-glitch {
     font-size: 3.6em;
     font-weight: 900;
-    color: #fff;
-    text-shadow: 0 0 20px #fff, 0 0 45px #fff;
+    color: #ffffff;
+    text-shadow: 0 0 20px #ffffff;
     position: relative;
+    display: inline-block;
 }
 
+/* نسخه اصلاح‌شده که دقیق وسط می‌نشیند */
 .title-glitch::before,
 .title-glitch::after {
     content: attr(data-text);
     position: absolute;
-    left: 0;
     top: 0;
-    opacity: 0.25;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    opacity: 0.32; /* تنظیم دقیق */
+    pointer-events: none;
 }
 
 .title-glitch::before {
     color: #ff0037;
-    transform: translate(3px, 3px);
+    transform: translate(2px, 2px);
 }
 
 .title-glitch::after {
     color: #00eaff;
-    transform: translate(-3px, -3px);
+    transform: translate(-2px, -2px);
 }
+
 
 /* ===========================
    TOP MENU (زیر هدر)
