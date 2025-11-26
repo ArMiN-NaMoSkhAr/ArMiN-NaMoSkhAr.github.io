@@ -9,23 +9,44 @@ body {
     overflow-x: hidden;
 }
 
-/* Header Titles */
-header h1,
-header h2 {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #fff;
+/* ===========================
+   HEADER
+=========================== */
+
+.cyber-header {
     text-align: center;
-    margin: 10px 0;
-    letter-spacing: 2px;
-    /* افکت حذف شد */
+    margin-top: 60px;
+    margin-bottom: 70px;
+    position: relative;
+    padding-bottom: 25px;
 }
 
-header {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* خط محو زیر منو */
-    padding-bottom: 10px;
+/* نور پس‌زمینه ساده و سفید (بدون رنگ بنفش/آبی) */
+.cyber-header::after {
+    content: "";
+    position: absolute;
+    bottom: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 320px;
+    height: 55px;
+    background: radial-gradient(circle, rgba(255,255,255,0.30), transparent 70%);
+    filter: blur(22px);
+    z-index: -1;
 }
 
+/* عنوان هدر — ساده و واضح، بدون رنگ‌های اضافی */
+.title-glitch {
+    font-size: 3.8em;
+    font-weight: 900;
+    color: #ffffff;
+    position: relative;
+    display: inline-block;
+    text-shadow: 0 0 14px rgba(255,255,255,0.65);
+}
+
+/* حذف تمام pseudo-element رنگی — فقط متن اصلی نمایش داده می‌شود */
+/* اگر قبلاً data-text استفاده شده بود، الان نادیده گرفته می‌شود */
 
 /* ===========================
    TOP MENU (زیر هدر)
@@ -38,6 +59,7 @@ header {
     display: flex;
     gap: 20px;
     padding: 10px;
+    z-index: 10;
 }
 
 .top-menu a {
@@ -46,7 +68,7 @@ header {
     text-decoration: none;
     padding: 7px 14px;
     border-radius: 6px;
-    background: rgba(255,255,255,0.07);
+    background: rgba(255,255,255,0.06);
     backdrop-filter: blur(3px);
     transition: 0.25s;
 }
@@ -56,7 +78,7 @@ header {
     transform: translateY(-2px);
 }
 
-/* خط زیر منو */
+/* خط محو زیر منو — سفید/شفاف، بدون رنگ بنفش */
 .top-menu::after {
     content: "";
     position: absolute;
@@ -64,7 +86,7 @@ header {
     left: -5px;
     width: 150%;
     height: 4px;
-    background: radial-gradient(circle, rgba(255,255,255,0.45), transparent 70%);
+    background: radial-gradient(circle, rgba(255,255,255,0.40), transparent 70%);
     filter: blur(6px);
 }
 
@@ -161,11 +183,13 @@ header {
     .title-glitch { font-size: 2.4em; }
     .top-menu { top: 130px; left: 15px; gap: 10px; }
     .top-menu a { font-size: 0.88em; padding: 5px 10px; }
+    .section-box { width: 92%; margin: 40px auto; padding: 18px; }
 }
 
 @media (min-width: 600px) and (max-width: 900px) {
     .title-glitch { font-size: 3.1em; }
     .top-menu { top: 140px; left: 30px; }
+    .section-box { width: 90%; padding: 22px; }
 }
 
 @media (min-width: 900px) and (max-width: 1200px) {
