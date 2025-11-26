@@ -350,3 +350,18 @@ body {
         font-size: 0.85em;
     }
 }
+.cyber-header {
+    text-align: left;
+    padding: 40px 20px;
+}
+
+.top-menu {
+    margin-top: 10px;
+}
+
+.top-menu a {
+    color: white;
+    margin-right: 20px;
+    text-decoration: none;
+    font-size: 1.2em;
+}
